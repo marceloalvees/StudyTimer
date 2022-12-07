@@ -9,7 +9,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-    name:'BarraLateral'
+    name:'SideBar'
 })
 </script>
 <style scoped>
@@ -18,6 +18,11 @@ header{
     width: 100%;
     height: 100vh;
 }
+
+img{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
 @media only screen and (max-width: 768px){
     header {
         padding: 2.5rem;
