@@ -1,4 +1,4 @@
-# tracker
+# Study Time
 
 ## Project setup
 ```
