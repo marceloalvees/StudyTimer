@@ -35,7 +35,8 @@
         name:'formsTask',
         data () {
             return{
-                tempoEmSegundos: 0
+                tempoEmSegundos: 0,
+                cronometro: 0
             }
         },
         computed:{
@@ -46,13 +47,12 @@
         methods: {
 
             play () {
-                setInterval(() =>{
+                this.cronometro =  setInterval(() =>{
                     this.tempoEmSegundos += 1
                 },1000)
-                console.log('Iniciando')
             },
             stop () {
-                console.log('Finalizando')
+                clearInterval(this.cronometro)
             }
         }
     })
