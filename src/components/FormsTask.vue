@@ -8,52 +8,19 @@
                     placeholder="Qual tarefa você deseja iniciar?">
             </div>
             <div class="column">
-                <div class="is-flex is-align-items-center is-justify-content-space-between">
-                    <section>
-                        <strong>{{tempoDecorrido}}</strong>
-                    </section>
-                    <button class="button" v-on:click="play">
-                        <span class="icon">
-                            <i class="fas fa-play"></i>
-                        </span>
-                    </button>
-                    <button class="button" v-on:click="stop">
-                        <span class="icon">
-                            <i class="fas fa-stop"></i>
-                        </span>
-                        <span>stop</span>
-                    </button>
-                </div>
+                <TiMer />
             </div>
         </div>
     </div>
 </template>
 <script lang="ts">
     import { defineComponent } from 'vue';
+    import TiMer from "./Timer.vue"
 
     export default defineComponent({
         name:'formsTask',
-        data () {
-            return{
-                tempoEmSegundos: 0,
-                cronometro: 0
-            }
-        },
-        computed:{
-            tempoDecorrido () : string {
-                return new Date(this.tempoEmSegundos * 1000).toISOString().substr(11,8)
-            }
-        },
-        methods: {
-
-            play () {
-                this.cronometro =  setInterval(() =>{
-                    this.tempoEmSegundos += 1
-                },1000)
-            },
-            stop () {
-                clearInterval(this.cronometro)
-            }
+        components:{
+            TiMer
         }
     })
 </script>
